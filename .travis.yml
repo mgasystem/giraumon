@@ -1,0 +1,21 @@
+dist: trusty
+language: python
+sudo: required
+install:
+    #- pip install cryptography
+    - pip install coveralls
+    - python setup.py install
+    - pip install coverage
+    - pip install pytest
+    - pip install pytest-cov
+notifications:
+  email: false
+python:
+    - '2.7'
+    - '3.4'
+    - '3.5'
+    - '3.6'
+script:
+    - py.test -s -v --cov=.
+after_success:
+    - coveralls
