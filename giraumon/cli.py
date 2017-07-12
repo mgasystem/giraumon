@@ -9,6 +9,7 @@ from .initialize import init
 
 @click.group()
 def cli():
+    """Entry point for the global management tools"""
     pass
 
 
