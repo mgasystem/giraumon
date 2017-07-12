@@ -39,7 +39,10 @@ setup(
     ],
     keywords='hosting development',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    install_requires=['click==6.6'],
+    install_requires=[
+        'click==6.7',
+        'GitPython==2.1.5',
+    ],
     entry_points='''
         [console_scripts]
         giraumon=giraumon.cli:cli
