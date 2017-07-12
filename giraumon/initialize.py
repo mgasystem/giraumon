@@ -11,7 +11,8 @@ from git.exc import InvalidGitRepositoryError
 
 @click.command()
 @click.argument('path')
-def init(path):
+@click.option('-f', '--force', is_flag=True)
+def init(path, force):
     """
     Initialize the structure for file in the git repository
 
@@ -24,7 +25,7 @@ def init(path):
         path = os.getcwd()
     path = os.path.expanduser(path)
 
-    click.echo('Initialise Hosting Configuration in %s' % path)
+    click.echo('Initialise Hosting Configuration in "%s"' % path)
 
     # Check if repo contain is a git folder
     try:
@@ -32,6 +33,10 @@ def init(path):
         print(repo)
     except InvalidGitRepositoryError:
         click.echo('%s Not a valid repository' % path)
-        sys.exit(1)
+        if not force:
+            sys.exit(1)
+        click.echo('Initialize "%s" as Git repository' % path)
+        repo = Repo.init(path, bare=False)
+
 
     return sys.exit(0)
