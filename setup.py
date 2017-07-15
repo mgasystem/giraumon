@@ -33,7 +33,7 @@ setup(
     url='https://github.com/mgasystem/giraumon',
 
     author='Mirounga Team',
-    author_email='info(@)mirounga.net',
+    author_email='info@mirounga.net',
 
     license='GPLv3',
 
