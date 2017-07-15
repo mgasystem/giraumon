@@ -16,7 +16,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='giraumon',
-    version='0.1.0',
+    version=__import__('giraumon.__about__').__version__,
 
     description='Tools for developer to manage Mirounga Hosting Service',
     long_description=long_description,
