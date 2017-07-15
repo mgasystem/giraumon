@@ -1,0 +1,7 @@
+branch: master
+
+requirements:
+    - test-requirements.txt:
+        pin: False
+    - requirements.txt:
+        pin: True
