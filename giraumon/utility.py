@@ -9,6 +9,13 @@ MANIFEST_FILE = 'manifest.json'
 MANIFEST = {
     "name": "My Apps Title",
     "description": """Multi lines description""",
+    "website": "http://",
+    "repository": "http://",
+    "logo": "logo.png",
+    "success_url": "/success",
+    "media_url": {},
+    "env": {},
+    "templates": {},
 }
 
 
