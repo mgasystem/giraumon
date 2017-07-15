@@ -8,12 +8,12 @@ __all__ = [
 ]
 
 __title__ = "giraumon"
-__summary__ = "Core utilities for Python packages"
+__summary__ = "Tools to prepare deployment"
 __uri__ = "https://github.com/mgasystem/giraumon"
 
-__version__ = "0.1.0"
+__version__ = "0.0.1.dev0"
 
-__author__ = "Christophe cHAUVET"
+__author__ = "Christophe CHAUVET"
 __email__ = "christophe.chauvet@gmail.com"
 
 __license__ = "GPLv3"
