@@ -1,6 +1,6 @@
 -r requirements.txt
 flake8
-coverage
+coverage==4.4.1
 pytest
 pytest-cov
 bumpr
