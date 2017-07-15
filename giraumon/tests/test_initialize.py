@@ -3,6 +3,11 @@
 
 from click.testing import CliRunner
 from giraumon.initialize import init
+from giraumon.utility import create_manifest
+
+
+def test_create_manifest_with_no_path():
+    assert create_manifest('') == False
 
 
 def test_init_without_git_repo():
