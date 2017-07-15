@@ -3,4 +3,4 @@ flake8
 coverage
 pytest
 pytest-cov
-bumpr
+bumpr==0.3.6
