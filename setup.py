@@ -10,9 +10,18 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = f.read()
+
+def rst(filename):
+    return open(path.join(here, filename), encoding='utf-8').read()
+
+
+# Get the long description from the README file and CHANGELOG
+long_description = '\n'.join((
+    rst('README.rst'),
+    rst('CHANGELOG.rst'),
+    ''
+))
+
 
 setup(
     name='giraumon',
