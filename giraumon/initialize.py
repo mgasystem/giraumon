@@ -7,6 +7,7 @@ import sys
 import os
 from git import Repo
 from git.exc import InvalidGitRepositoryError
+from .utility import create_folder, create_manifest
 
 
 @click.command()
@@ -38,5 +39,13 @@ def init(path, force):
         click.echo('Initialize "%s" as Git repository' % path)
         repo = Repo.init(path, bare=False)
 
+    # check if path .platform exists
+    pfdir = os.path.join(path, '.platform')
+    create_folder(pfdir)
+    create_manifest(pfdir)
+
+    # Add templates folder
+    tpdir = os.path.join(pfdir, 'templates')
+    create_folder(tpdir, gitkeep=True)
 
     return sys.exit(0)
