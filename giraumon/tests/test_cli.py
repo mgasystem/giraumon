@@ -10,4 +10,5 @@ def test_cli_without_argument():
 
     runner = CliRunner()
     result = runner.invoke(cli, [])
-    assert not result.exception
+    assert result.exit_code == 0
+    assert 'Entry point for the global management tools' in result.output

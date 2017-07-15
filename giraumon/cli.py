@@ -4,13 +4,14 @@
 from __future__ import print_function
 import click
 
+from . import __version__ as version
 from .initialize import init
 
 
 @click.group()
 def cli():
     """Entry point for the global management tools"""
-    pass
+    click.echo('Giraumon Tools version: %s' % version)  # pragma: no cover
 
 
 cli.add_command(init)
