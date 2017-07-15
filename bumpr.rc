@@ -15,7 +15,7 @@ message = Bumped version {version}
 
 [prepare]
 part = patch
-suffix = dev0
+suffix = dev
 
 [changelog]
 file = CHANGELOG.rst
