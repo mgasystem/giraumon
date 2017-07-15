@@ -1,0 +1,24 @@
+[bumpr]
+file = giraumon/__about__.py
+vcs = git
+push = true
+tests = py.test -s -v --cov=.
+publish = python setup.py register sdist bdist_wheel upload
+clean =
+    python setup.py clean
+    inv clean
+files = README.rst
+
+[bump]
+unsuffix = true
+message = Bumped version {version}
+
+[prepare]
+part = patch
+suffix = dev0
+
+[changelog]
+file = CHANGELOG.rst
+bump = {version} ({date:%Y-%m-%d})
+prepare = Current
+
