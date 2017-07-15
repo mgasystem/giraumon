@@ -11,6 +11,7 @@ MANIFEST = {
     "description": """Multi lines description""",
 }
 
+
 def create_manifest(path=''):
     """
     Manifest is a JSON file, localte at .platform by default

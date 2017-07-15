@@ -5,9 +5,17 @@ from click.testing import CliRunner
 from giraumon.initialize import init
 
 
-def test_init_without_repo():
-    """Test init with forlder with no git root """
+def test_init_without_git_repo():
+    """Test init on folder with no git root """
+    runner = CliRunner()
+    result = runner.invoke(init, ['/tmp'])
+    assert result.exit_code == 1
+    assert 'Not a valid repository' in result.output
+
+
+def test_init_with_git_repo():
+    """Test init on folder with git root """
     runner = CliRunner()
     result = runner.invoke(init, ['.'])
-    assert not result.exception
-
+    assert result.exit_code == 0
+    assert 'Initialise Hosting Configuration in' in result.output

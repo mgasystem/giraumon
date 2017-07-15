@@ -11,4 +11,3 @@ def test_cli_without_argument():
     runner = CliRunner()
     result = runner.invoke(cli, [])
     assert not result.exception
-
