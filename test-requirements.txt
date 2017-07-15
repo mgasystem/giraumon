@@ -1,5 +1,5 @@
 -r requirements.txt
-flake8
+flake8==3.3.0
 coverage
 pytest
 pytest-cov
