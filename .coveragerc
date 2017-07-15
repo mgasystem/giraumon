@@ -1,0 +1,6 @@
+[report]
+omit = 
+    setup.py
+    giraumon/__main__.py
+    giraumon/tests/*
+    */__init__.py
