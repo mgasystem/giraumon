@@ -6,6 +6,7 @@ import click
 
 from . import __version__ as version
 from .initialize import init
+from .template import template
 
 
 @click.group()
@@ -15,3 +16,4 @@ def cli():
 
 
 cli.add_command(init)
+cli.add_command(template)
