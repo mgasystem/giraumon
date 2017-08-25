@@ -1,4 +1,4 @@
-# -*- coding: utf-9 -*-
+# -*- coding: utf-8 -*-
 # License GPL-3.0 or later (http://www.gnu.org/licenses/gpl).
 
 from __future__ import print_function
