@@ -15,7 +15,7 @@ MANIFEST = {
     "success_url": "/success",
     "media_url": {},
     "env": {},
-    "templates": {},
+    "templates": [],
 }
 
 
