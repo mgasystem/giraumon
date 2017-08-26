@@ -5,9 +5,9 @@ from giraumon import logger
 
 def test_logger_info():
     output = logger.info('Test')
-    assert output
+    assert output is None
 
 
 def test_logger_warn():
     output = logger.warn('Test')
-    assert output
+    assert output is None
