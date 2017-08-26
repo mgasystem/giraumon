@@ -11,3 +11,8 @@ def test_logger_info():
 def test_logger_warn():
     output = logger.warn('Test')
     assert output is None
+
+
+def test_logger_error():
+    output = logger.error('Test')
+    assert output is None
