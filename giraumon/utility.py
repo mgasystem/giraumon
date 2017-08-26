@@ -3,6 +3,7 @@
 
 import os
 import json
+from .__about__ import __version__
 
 MANIFEST_FILE = 'manifest.json'
 
@@ -12,6 +13,7 @@ MANIFEST = {
     "website": "http://",
     "repository": "http://",
     "logo": "logo.png",
+    "giraumon_version": __version__,
     "success_url": "/success",
     "media_url": {},
     "env": {},
