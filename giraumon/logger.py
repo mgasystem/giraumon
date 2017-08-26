@@ -2,6 +2,14 @@
 # License GPL-3.0 or later (http://www.gnu.org/licenses/gpl).
 import click
 import time
+import os
+
+
+def _multi_lines(message):
+    """
+    Split message with new line as an array
+    """
+    return message.split(os.linesep)
 
 
 def info(message):
@@ -10,7 +18,9 @@ def info(message):
     """
     prefix = '%s %s ' % (time.strftime('%Y-%m-%d %H:%M:%S'),
                           click.style('INFO', fg='green'))
-    return click.echo(prefix+ click.style(message, bg='black'))
+    res = [click.echo(prefix+ click.style(
+        l, bg='black')) for l in _multi_lines(message)]
+    return '\n'.join(map(str, res))
 
 
 def warn(message):
@@ -19,7 +29,9 @@ def warn(message):
     """
     prefix = '%s %s ' % (time.strftime('%Y-%m-%d %H:%M:%S'),
                          click.style('WARNING', fg='blue'))
-    return click.echo(prefix+ click.style(message, bg='black'))
+    res = [click.echo(prefix+ click.style(
+        l, bg='black')) for l in _multi_lines(message)]
+    return '\n'.join(map(str, res))
 
 
 def error(message):
@@ -28,4 +40,6 @@ def error(message):
     """
     prefix = '%s %s ' % (time.strftime('%Y-%m-%d %H:%M:%S'),
                          click.style('ERROR', fg='red'))
-    return click.echo(prefix+ click.style(message, bg='black'))
+    res = [click.echo(prefix+ click.style(
+        l, bg='black')) for l in _multi_lines(message)]
+    return '\n'.join(map(str, res))
