@@ -34,3 +34,10 @@ def test_template_with_add_options():
     runner = CliRunner()
     result = runner.invoke(template, ['--add', '/etc/hosts', '.'])
     assert result.exit_code == 0
+
+
+def test_template_with_add_options_pass2():
+    """Test template on folder with no git root"""
+    runner = CliRunner()
+    result = runner.invoke(template, ['--add', '/etc/hosts', '.'])
+    assert result.exit_code == 0
