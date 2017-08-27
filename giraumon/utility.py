@@ -59,17 +59,19 @@ def create_folder(path='', gitkeep=False):
     return True
 
 
-def find_git_root():
+def find_git_root(path='.'):
     """
     Detect if the current directory is in a git tree
     Return the root git directory
     """
     try:
-        repo = Repo(os.getcwd())
+        if path == '.':
+            path = os.getcwd()
+        repo = Repo(path)
         return repo.working_dir
     except InvalidGitRepositoryError:
         logger.error('%s Not a valid repository' % os.getcwd())
-        return ''
+        return False
 
 
 def check_manifest(path):
