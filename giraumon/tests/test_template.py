@@ -3,13 +3,23 @@
 
 from click.testing import CliRunner
 from giraumon.template import template
+import tempfile
+import os
 
 
 def test_template_without_options():
     """Test template on folder with no git root"""
     runner = CliRunner()
-    result = runner.invoke(template, [])
+    result = runner.invoke(template, ['.'])
     assert result.exit_code == 0
+
+
+def test_template_without_options_no_git():
+    """Test template on folder with no git root"""
+    tpf = tempfile.mkdtemp(prefix='giraumon')
+    runner = CliRunner()
+    result = runner.invoke(template, [tpf])
+    assert result.exit_code == 1
 
 
 def test_template_with_add_options_empty():
@@ -22,5 +32,5 @@ def test_template_with_add_options_empty():
 def test_template_with_add_options():
     """Test template on folder with no git root"""
     runner = CliRunner()
-    result = runner.invoke(template, ['--add', '/etc/hosts'])
+    result = runner.invoke(template, ['--add', '/etc/hosts', '.'])
     assert result.exit_code == 0
