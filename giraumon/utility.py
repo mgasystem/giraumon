@@ -96,6 +96,7 @@ def write_manifest(path, content):
     mf = os.path.join(path, '.platform', MANIFEST_FILE)
     with open(mf, 'w') as fd:
         fd.write(json.dumps(content, indent=2, sort_keys=True))
+    return True
 
 
 def add_template(path, filename):
