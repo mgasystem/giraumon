@@ -14,7 +14,7 @@ from giraumon import logger
 @click.group()
 def cli():
     """Entry point for the global management tools"""
-    click.clear()
+    click.clear()  # pragma: no cover
     logger.info('Giraumon Tools version: %s' % version)  # pragma: no cover
     logger.info('- Platform: %s' % sys.platform)  # pragma: no cover
     logger.info('- Python version: %s' % sys.version)  # pragma: no cover
