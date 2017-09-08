@@ -8,6 +8,7 @@ from git import Repo
 from git.exc import InvalidGitRepositoryError
 from .__about__ import __version__
 from giraumon import logger
+from jinja2 import Environment
 
 MANIFEST_FILE = 'manifest.json'
 
@@ -122,3 +123,16 @@ def add_template(path, filename):
             'chmod': '600',
         })
         write_manifest(path, mf_data)
+
+def render_template(template):
+    """
+    Render the template with the content of the manifest.json
+    """
+    context = {}
+    jinja_env = Environment(
+        block_start_string="<%",
+        block_end_string="%>",
+        variable_start_string="%%",
+        variable_end_string="%%"
+    )
+    return jinja_env.from_string(template).render(**context)
