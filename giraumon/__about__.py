@@ -22,4 +22,4 @@ try:
     __version__ = get_distribution('giraumon').version
 except DistributionNotFound:
     # package is not installed
-    pass  # noqa
+    __version__ = None
