@@ -6,6 +6,8 @@
 Welcome to Giraumon's documentation!
 ====================================
 
+Giraumon is an application management tool, from development to production.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
