@@ -4,6 +4,6 @@ from giraumon.version import version
 
 
 def test_check_version():
-    assert __version__ is not None
+    assert version is not None
 
 
