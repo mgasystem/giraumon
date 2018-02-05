@@ -19,7 +19,7 @@ __license__ = "GPLv3"
 __copyright__ = "Copyright 2016-2017 %s" % __author__
 
 try:
-    __version__ = get_distribution(__name__).version
+    __version__ = get_distribution('giraumon').version
 except DistributionNotFound:
     # package is not installed
     pass  # noqa
