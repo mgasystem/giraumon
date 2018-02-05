@@ -11,7 +11,7 @@ __title__ = "giraumon"
 __summary__ = "Tools to prepare deployment"
 __uri__ = "https://github.com/mgasystem/giraumon"
 
-__version__ = "0.0.2.dev"
+__version__ = "0.0.2.dev0"
 
 __author__ = "Christophe CHAUVET"
 __email__ = "christophe.chauvet@gmail.com"
