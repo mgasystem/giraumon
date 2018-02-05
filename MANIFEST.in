@@ -1,2 +1,8 @@
 # Include the license file
 include LICENSE
+exclude .travis.yml
+exclude .codecov.yml
+exclude .pyup.yml
+exclude .coveragerc
+exclude .gitignore
+exclude bumpr.rc
