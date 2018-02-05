@@ -31,7 +31,6 @@ def version_scheme(version):
 
 setup(
     name='giraumon',
-    version=__import__('giraumon.__about__').__version__,
     setup_requires=['setuptools_scm'],
     use_scm_version={
         'write_to': "giraumon/version.py",
