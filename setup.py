@@ -23,9 +23,19 @@ long_description = '\n'.join((
 ))
 
 
+def version_scheme(version):
+    from setuptools_scm.version import guess_next_dev_version
+    version = guess_next_dev_version(version)
+    return version.lstrip("v")
+
+
 setup(
     name='giraumon',
-    version=__import__('giraumon.__about__').__version__,
+    setup_requires=['setuptools_scm'],
+    use_scm_version={
+        'write_to': "giraumon/version.py",
+        'version_scheme': version_scheme,
+    },
 
     description='Tools for developer to manage Mirounga Hosting Service',
     long_description=long_description,

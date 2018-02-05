@@ -102,3 +102,6 @@ ENV/
 
 # Exclude .platform, use by py.test
 .platform/
+
+# Don't version file (requirement by setuptools_scm)
+giraumon/version.py
