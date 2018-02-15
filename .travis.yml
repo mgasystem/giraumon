@@ -24,6 +24,7 @@ script:
     - py.test -s -v --cov=.
 after_success:
     - codecov
+    - cd docs && make html
     #- coveralls
 deploy:
   provider: pages
