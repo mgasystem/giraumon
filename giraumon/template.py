@@ -9,18 +9,21 @@ from giraumon import logger
 from .utility import find_git_root, check_manifest, add_template
 
 
-@click.command()
-@click.option('-a', '--add', type=click.Path(
-    exists=True, file_okay=True, readable=True, resolve_path=True))
-@click.option('-r', '--render', type=click.Path(
-    exists=True, file_okay=True, readable=True, resolve_path=True))
-@click.argument('path', type=click.Path())
-def template(add, render, path):
+@click.command('template')
+def template():
     """
-    Add option: Copy template to the folder template
-    Render: take template and render it
+    Manage template with some subcommand
     """
 
+    return sys.exit(0)
+
+
+@click.command('template:add')
+@click.argument('path', type=click.Path())
+def template_add(path):
+    """
+    Copy template to the folder template
+    """
     wk_dir = find_git_root(path)
     if not wk_dir:
         logger.error('No git repository found !')
@@ -31,7 +34,6 @@ def template(add, render, path):
         logger.error('No manifest file found !')
         return sys.exit(1)
 
-    if add is not None:
-        add_template(wk_dir, add)
+    add_template(wk_dir, path)
 
     return sys.exit(0)
