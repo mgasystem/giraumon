@@ -17,6 +17,7 @@ python:
     - '3.4'
     - '3.5'
     - '3.6'
+    - '3.7'
     - 'nightly'
 jobs:
   allow_failures:
@@ -34,5 +35,5 @@ deploy:
   local_dir: docs/build/html/
   on:
     branch: master
-    python: 3.5
+    python: 3.6
     tags: true
