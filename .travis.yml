@@ -1,6 +1,14 @@
-dist: trusty
+sudo: false
 language: python
-# sudo: required
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.4
+    - python: 3.5
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+      sudo: true
 install:
     #- pip install cryptography
     #- pip install coveralls
@@ -10,23 +18,14 @@ install:
     - pip install pytest
     - pip install pytest-cov
     - pip install Sphinx
-notifications:
-  email: false
-python:
-    - '2.7'
-    - '3.4'
-    - '3.5'
-    - '3.6'
-    - 'nightly'
-jobs:
-  allow_failures:
-    - python: "nightly"
 script:
     - py.test -s -v --cov=.
 after_success:
     - codecov
     - cd docs && make html
     #- coveralls
+notifications:
+  email: false
 deploy:
   provider: pages
   skip_cleanup: true
@@ -34,5 +33,5 @@ deploy:
   local_dir: docs/build/html/
   on:
     branch: master
-    python: 3.5
+    python: 3.6
     tags: true
