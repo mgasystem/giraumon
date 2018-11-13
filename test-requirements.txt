@@ -1,6 +1,6 @@
 -r requirements.txt
 flake8==3.6.0
-coverage==4.5.1
+coverage==4.5.2
 pytest==3.10.1
 pytest-cov==2.6.0
 bumpr==0.3.7
