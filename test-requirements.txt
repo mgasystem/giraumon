@@ -1,7 +1,7 @@
 -r requirements.txt
 flake8==3.7.3
 coverage==4.5.2
-pytest==4.1.1
+pytest==4.2.0
 pytest-cov==2.6.1
 bumpr==0.3.7
 setuptools-scm==3.2.0
