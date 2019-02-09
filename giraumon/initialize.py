@@ -42,7 +42,7 @@ def init(path, force):
     # check if path .platform exists
     pfdir = os.path.join(path, '.platform')
     create_folder(pfdir)
-    create_manifest(pfdir)
+    create_manifest(path)
 
     # Add templates folder
     tpdir = os.path.join(pfdir, 'templates')
