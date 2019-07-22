@@ -1,11 +1,12 @@
 branch: master
-
-requirements:
-    - test-requirements.txt:
-        pin: True
-    - requirements.txt:
-        pin: True
-
 assignees: kryskool
 branch_prefix: pyup/
 label_prs: update
+
+requirements:
+  - test-requirements.txt:
+    pin: True
+  - requirements.txt:
+    pin: True
+  - docs-requirements.txt:
+    pin: True
