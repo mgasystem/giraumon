@@ -65,7 +65,7 @@ setup(
     keywords='hosting development',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=[
-        'click==6.7',
+        'click==8.1.7',
         'GitPython==3.1.41',
     ],
     entry_points='''
