@@ -66,7 +66,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=[
         'click==6.7',
-        'GitPython==3.1.41',
+        'GitPython==3.1.42',
     ],
     entry_points='''
         [console_scripts]
